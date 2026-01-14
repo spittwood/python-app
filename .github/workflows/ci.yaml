@@ -9,7 +9,7 @@ on:
 
 jobs:
   docker:
-    runs-on: arc-runners-set
+    runs-on: arc-runners
     steps:
       - name: Shorten commit id
         shell: bash
