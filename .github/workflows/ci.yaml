@@ -31,6 +31,12 @@ jobs:
     needs: ci
     runs-on: arc-runner-set
     steps:
+      - name: Install ArgoCD CLI
+        shell: bash
+        run: |
+          curl -k -sSL -o argocd-linux-amd64 https://argocd-server.argocd/donwloads/argocd-linux-amd64
+          chmod +x argocd-linux-amd64
+          mv ./argocd-linux-amd64 /usr/local/bin/argocd
       - name: ArgoCD Login
         shell: bash
         run: |
