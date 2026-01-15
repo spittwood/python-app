@@ -34,13 +34,13 @@ jobs:
       - name: Install ArgoCD CLI
         shell: bash
         run: |
-          curl -k -sSL -o argocd-linux-amd64 https://argocd-server.argocd/donwloads/argocd-linux-amd64
+          curl -k -sSL -o argocd-linux-amd64 https://argcd-argocd-server.argocd/donwloads/argocd-linux-amd64
           chmod +x argocd-linux-amd64
           mv ./argocd-linux-amd64 /usr/local/bin/argocd
       - name: ArgoCD Login
         shell: bash
         run: |
-          argocd login argocd-server.argocd \
+          argocd login argcd-argocd-server.argocd \
             --insecure \
             --grpc-web \
             --username ${{ vars.ARGOCD_USER }} \
