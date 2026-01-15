@@ -8,7 +8,7 @@ app = Flask(__name__)
 def details():
     return jsonify(
         {
-            "message": "Lorem Ipsum from Flask!",
+            "message": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
             'hostname': socket.gethostname(),
             "time": datetime.datetime.now().strftime("%I:%M%p on %B %d, %Y")
         }
