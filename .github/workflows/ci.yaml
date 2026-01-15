@@ -8,8 +8,8 @@ on:
       - main
 
 jobs:
-  ci:
-    runs-on: ubuntu-latest
+  docker:
+    runs-on: arc-runner-set
     steps:
       - name: Shorten commit id
         shell: bash
