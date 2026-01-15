@@ -33,6 +33,7 @@ jobs:
     needs: ci
     runs-on: arc-runner-set
     steps:
+      - uses: actions/checkout@v4
       - name: Modify Values file
         shell: bash
         run: |
