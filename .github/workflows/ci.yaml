@@ -37,7 +37,9 @@ jobs:
         shell: bash
         run: |
           echo ${{ needs.ci.outputs.commit_id }}
-          sudo wget https://github.com/mikefarah/yq/releases/download/v4.50.1/yq_linux_amd64 -O /usr/local/bin/yq
+          curl -ksSL -o yq https://github.com/mikefarah/yq/releases/download/v4.50.1/yq_linux_amd64
+          chmod +x yq
+          sudo mv ./yq /usr/local/bin/yq
           yq -Yi '.image.tag = "${{needs.ci.outputs.commit_id}}"' charts/python-app/values.yaml
       - name: Install ArgoCD CLI
         shell: bash
